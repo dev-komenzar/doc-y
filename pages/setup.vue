@@ -9,7 +9,9 @@
             <v-tab href="#windows">Windows</v-tab>
             <v-tab href="#ubuntu">Ubuntu</v-tab>
             <v-tab-item value="mac"><!--Macのマニュアルを配置--></v-tab-item>
-            <v-tab-item value="windows"><SetupWindows /></v-tab-item>
+            <v-tab-item value="windows" class="mt-2"
+              ><SetupWindows
+            /></v-tab-item>
             <v-tab-item value="ubuntu"
               ><!--Ubuntuのマニュアルを配置--></v-tab-item
             >
