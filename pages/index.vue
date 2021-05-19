@@ -17,6 +17,7 @@
             <NuxtLink to="/pm">プロジェクト管理について</NuxtLink>
           </p>
           <p><NuxtLink to="/setup">セットアップマニュアル</NuxtLink></p>
+          <p><NuxtLink to="/debug">Vue + Electron デバッグまとめ</NuxtLink></p>
           <p>
             If you have questions, please join the official
             <a
