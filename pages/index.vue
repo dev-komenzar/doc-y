@@ -6,7 +6,7 @@
         <vuetify-logo />
       </div>
       <v-card>
-        <v-card-title class="headline"> RUTILEA GUI GROUP DOC </v-card-title>
+        <v-card-title class="headline"> RUTILEA GUI GROUP </v-card-title>
         <v-card-text>
           <p>
             Nuxt.js + Vuetify + GitHub Pagesで作るGUI班のドキュメントです。
@@ -16,35 +16,6 @@
           <p>
             <NuxtLink to="/pm">プロジェクト管理について</NuxtLink>
           </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
           <hr class="my-3" />
           <a
             href="https://nuxtjs.org/"
