@@ -9,26 +9,16 @@
             やってよかったこと、改善できることをまとめていきます。
           </p>
           <p>まずやってよかったこと</p>
-          <v-list disabled dense>
-            <v-list-item-group>
-              <v-list-item>GitHub Projects タスク共有ツール</v-list-item>
-              <v-list-item>フォーマッターを使う</v-list-item>
-              <v-list-item>
-                バックエンドの人にモックサーバーを作ってもらった
-              </v-list-item>
-            </v-list-item-group>
-          </v-list>
+          <ul>
+            <li>GitHub Projects タスク共有ツール</li>
+            <li>フォーマッターを使う</li>
+            <li>バックエンドの人にモックサーバーを作ってもらった</li>
+          </ul>
           <p>また今回の反省でもっと良くできること</p>
-          <v-list disabled dense>
-            <v-list-item-group>
-              <v-list-item
-                >フォーマッターをファイル保存時に実行する設定</v-list-item
-              >
-              <v-list-item
-                >フロントエンドとバックエンドのリポジトリは分離する</v-list-item
-              >
-            </v-list-item-group>
-          </v-list>
+          <ul>
+            <li>フォーマッターをファイル保存時に実行する設定</li>
+            <li>フロントエンドとバックエンドのリポジトリは分離する</li>
+          </ul>
           <h2>プロジェクトの進め方</h2>
           <p>はじめにどんなふうにプロジェクトを進めたのかレポートします。</p>
           <p>
@@ -67,23 +57,58 @@
           </p>
           <p>GH Projectのカラムのひとつを「共有情報」に割り当てました。</p>
           <h3>タスク共有</h3>
+          <p>タスクの管理もGitHub Project Boardを使いました。 流れとしては、</p>
+          <ul>
+            <li>
+              米谷がプロジェクト全体の
+              マネージャー（今回は廣川さん→窪田さん）からフロントのタスクを割り当てられ
+            </li>
+            <li>タスクへと整理・分割して Boardに書き込む</li>
+            <li>作業する人はBoardにあるタスクを上から取り掛かる</li>
+          </ul>
+          <p>こんな感じです。</p>
+          <h3>質問しやすい環境作り</h3>
           <p>
-            タスクの管理もGitHub Project Boardを使いました。 流れとしては、
-            <v-list disabled dense>
-              <v-list-item
-                >米谷がプロジェクト全体の
-                マネージャー（今回は廣川さん→窪田さん）からフロントのタスクを割り当てられ</v-list-item
-              >
-              <v-list-item
-                >タスクへと整理・分割して Boardに書き込む</v-list-item
-              >
-              <v-list-item
-                >作業する人はBoardにあるタスクを上から取り掛かる</v-list-item
-              >
-            </v-list>
-            こんな感じです。
+            今回は２人での開発だったので関係なかったんですが、
+            slackのチャンネルなどで質問を受ける場を作るといいと思います。
+            Yグループの全体ではなかなか書き込みにくいため、
+            専用のチャンネルを作るなど質問に特化した場所を設置したほうがいいと思います。
           </p>
+          <p>
+            自分で調べることは大事ですが、たとえば「今回のプロジェクトのファイル構成」などはいくらググっても出てきません。
+            プロジェクトについて知っている人から教えてもらう必要があります。
+          </p>
+          <p>
+            また、ZeroMQのバージョンの違いによるエラーのように
+            GUI班でよくあるトラブルというのも誰かに教えてもらった方が早かったりします。
+          </p>
+          <h2>フォーマッターを使う</h2>
+          <p>
+            JavaScript,
+            TypeScriptでコードを書いていると人によってばらつきがあります。
+            インデントがスペース２個なのか４個なのか。アロー関数を書くとき
+            (element) => func なのか element => {func}なのか。
+            ばらつきがあると他の人が書いたコードが読みにくくなってしまいます。
+          </p>
+          <p>
+            そこで登場するのがフォーマッターです。フォーマッターとは、
+            ルールに従ってコードを整形（format）してくれるプログラムのことです。
+            言語によって有名なフォーマッターがあります。JS, TSの場合"ESLint +
+            Prettier" という組み合わせがよく使われます。
+          </p>
+          <h3>参考</h3>
+          <ul>
+            <li>
+              <a href="https://qiita.com/soarflat/items/06377f3b96964964a65d"
+                >* Prettier 入門 ～ESLintとの違いを理解して併用する～ - Qiita</a
+              >
+            </li>
+          </ul>
         </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn color="primary" nuxt to="/"> Home </v-btn>
+        </v-card-actions>
       </v-card>
     </v-col>
   </v-row>
@@ -100,3 +125,8 @@ export default Vue.extend({
   },
 })
 </script>
+<style scoped>
+h2 {
+  margin: 2rem auto 1rem;
+}
+</style>
