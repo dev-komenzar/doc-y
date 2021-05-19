@@ -5,7 +5,7 @@
 <script lang="ts">
 import Vue from 'vue'
 const environment = process.env.NODE_ENV || 'local'
-const env = require(`./env/${environment}.ts`)
+const env = require(`../env/${environment}.ts`)
 
 export default Vue.extend({
   data() {
