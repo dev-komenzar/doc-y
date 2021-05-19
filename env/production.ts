@@ -1,3 +1,3 @@
 module.exports = {
-  BASE_URL: '/doc-y/',
+  BASE_URL: '/',
 }
