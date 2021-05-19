@@ -45,6 +45,7 @@
     </v-main>
     <v-footer :absolute="!fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
+      <v-spacer />
       <NuxtLink to="/">Home</NuxtLink>
     </v-footer>
   </v-app>
