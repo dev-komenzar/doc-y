@@ -31,10 +31,39 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
+          <v-btn color="primary" nuxt to="/inspire"> 編集のやり方へ </v-btn>
         </v-card-actions>
       </v-card>
-      <v-card class="ma-2" :ripple="{ center: false }" nuxt>
+      <v-card class="ma-2" :ripple="{ center: false }">
+        <v-card-title class="headline">セットアップマニュアル</v-card-title>
+        <v-card-text>
+          <p>
+            Mac, Windows, Ubuntu でのVue.js + TypeScript + Electron
+            のセットアップ方法をまとめています。
+          </p>
+          <p>現在Windows版のみ整備中。Mac, Ubuntu版を書く人募集。</p>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn color="primary" nuxt to="/setup">セットアップへ</v-btn>
+        </v-card-actions>
+      </v-card>
+      <v-card class="ma-2" :ripple="{ center: false }">
+        <v-card-title class="headline"
+          >Vue + Electron デバッグまとめ</v-card-title
+        >
+        <v-card-text>
+          <p>
+            デバッグを知っていると開発効率が上がります。ぜひ活用してください！
+          </p>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn color="primary" nuxt to="/debug">デバッグへ</v-btn>
+        </v-card-actions>
+      </v-card>
+
+      <v-card class="ma-2" :ripple="{ center: false }">
         <v-card-title class="headline"> プロジェクト管理について </v-card-title>
         <v-card-text>
           米谷がはじめてPM（プロジェクトマネージャー）をやって気がついたことをシェアします。
