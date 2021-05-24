@@ -118,5 +118,31 @@
         >VSCodeでファイル保存時にPrettierを走らせる方法
       </a>
     </p>
+    <h2 class="mb-2">Visual Studio Codeについて</h2>
+    <h3 class="mb-2">便利な拡張機能</h3>
+    <v-list>
+      <v-list-item class="mb-2"
+        >Auto Close Tag<br />開始タグを書くと終了タグを付け加えてくれる。</v-list-item
+      >
+      <v-list-item class="mb-2"
+        >Auto Rename Tag<br />
+        開始タグと終了タグを同時に書き換えられる。</v-list-item
+      >
+      <v-list-item class="mb-2"
+        >Bracket Pair Colorizer<br />コード内の括弧を、ペア同士が同じ色になるように色分けしてくれる。Javascriptでは括弧が増えすぎて混乱しがちなのでとても助かる。</v-list-item
+      >
+      <v-list-item class="mb-2">ESLint<br />前述の通り。</v-list-item>
+      <v-list-item class="mb-2"
+        >Japanese Language Pack for Visual Studio Code<br />VSCodeを日本語にできる。</v-list-item
+      >
+      <v-list-item class="mb-2">Prettier<br />前述の通り。</v-list-item>
+      <v-list-item class="mb-2"
+        >Tabnine<br />AIが予測変換を表示してくれる入力補完ツール。無料版だと一日に利用できる回数に制限がある。</v-list-item
+      >
+      <v-list-item class="mb-2"
+        >Vetur<br />Vueのコードの色分けやテンプレートの表示をしてくれる。</v-list-item
+      >
+      <v-list-item class="mb-2"><br /></v-list-item>
+    </v-list>
   </div>
 </template>
