@@ -15,8 +15,18 @@
         を実行。ローカルリポジトリが作成されたら、 yarn install を実行しておく。
       </p>
       <p>
+        <a href="https://qiita.com/mnao305/items/b3c5f5943066a0bb8e2e"
+          >VSCodeの機能で最低限必要なGit操作をしたい！</a
+        >
+      </p>
+      <p>
         <a href="https://qiita.com/y-tsutsu/items/2ba96b16b220fb5913be"
           >VSCodeでのGitの基本操作まとめ</a
+        >
+      </p>
+      <p>
+        <a href="https://qiita.com/rubytomato@github/items/1696530bb9fd59aa28d8"
+          >npmとyarnのコマンド早見表</a
         >
       </p>
       <h2>Typescriptについて</h2>
