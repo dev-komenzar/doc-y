@@ -8,11 +8,14 @@
         >
       </p>
       <h3>Vue CLIのインストール</h3>
-      <p>コマンドラインで yarn global add @vue/cli を実行。</p>
+      <p>コマンドラインで <code>yarn global add @vue/cli</code> を実行。</p>
       <h3>Githubのリモートリポジトリの内容をローカルにコピーする場合</h3>
       <p>
-        ローカルリポジトリを作成したいディレクトリに移動し、git clone ~.git
-        を実行。ローカルリポジトリが作成されたら、 yarn install を実行しておく。
+        ローカルリポジトリを作成したいディレクトリに移動し、<code
+          >git clone ~.git</code
+        >
+        を実行。ローカルリポジトリが作成されたら、
+        <code>yarn install</code> を実行しておく。
       </p>
       <p>
         <a href="https://qiita.com/mnao305/items/b3c5f5943066a0bb8e2e"
@@ -42,8 +45,9 @@
       </p>
       <h2>Vue + TypeScriptで開発を始める</h2>
       <p>
-        新しいプロジェクトを作成したいディレクトリに移動し、 vue create
-        (プロジェクト名) を実行。その後以下のように選択。
+        新しいプロジェクトを作成したいディレクトリに移動し、
+        <code>vue create (プロジェクト名) </code
+        >を実行。その後以下のように選択。
         <v-list two-line>
           <v-list-item
             ><v-list-item-content>
@@ -122,7 +126,10 @@
         >が公開されている。
       </p>
       <h3>Electronのインストール</h3>
-      <p>Vueプロジェクトを立ち上げてから yarn add electron でインストール。</p>
+      <p>
+        Vueプロジェクトを立ち上げてから
+        <code>yarn add electron</code> でインストール。
+      </p>
       <h2>Vuetifyについて</h2>
       <p>
         <a href="https://vuetifyjs.com/ja/getting-started/installation/"
@@ -133,7 +140,10 @@
         2021年5月時点でVuetifyはVue3には対応していない。Vuetifyを使う際はVueプロジェクト作成時にversion2を指定する必要がある。
       </p>
       <h3>Vuetifyのインストール</h3>
-      <p>Vueプロジェクトを立ち上げてから yarn add vuetify でインストール。</p>
+      <p>
+        Vueプロジェクトを立ち上げてから
+        <code>vue add vuetify</code> でインストール。
+      </p>
       <h2>Prettier + ESLint（フォーマッター）について</h2>
       <p>いずれもVSCodeの拡張機能からインストールできる。</p>
       <p>
@@ -178,7 +188,7 @@
             <v-list-item-title
               >Japanese Language Pack for Visual Studio Code</v-list-item-title
             >
-            VSCodeを日本語にできる。
+            VSCodeを日本語で使用できる。
           </v-list-item-content></v-list-item
         >
         <v-list-item
@@ -200,6 +210,94 @@
           </v-list-item-content></v-list-item
         >
       </v-list>
+      <h2>（おまけ）個人的につまづいた部分について</h2>
+      <p>過去に遭遇した（主に）Windows特有の問題について述べておく。</p>
+      <h3>ZeroMQでコンパイルエラー</h3>
+      <v-list three-line>
+        <v-list-item
+          ><v-list-item-content>
+            <v-list-item-title>エラー１</v-list-item-title
+            >（エラーコードを記録するのを忘れた）<br />
+            zeromq をコンパイルできていなかったのが原因でした。<br />
+            対策：Visual Studio 2015 C++ をインストール</v-list-item-content
+          >
+        </v-list-item>
+        <v-list-item
+          ><v-list-item-content>
+            <v-list-item-title>エラー２</v-list-item-title
+            ><code
+              >Module parse failed: Unexpected character '�' (1:2)<br />
+              You may need an appropriate loader to handle this file type,
+              currently no loaders are configured to process this file. See
+              https://webpack.js.org/concepts#loaders <br />(Source code omitted
+              for this binary file)</code
+            >
+            原因：バイナリーファイルを読み込めていない。zeromq.nodeはプレビルドされているから。<br />
+            対策：https://github.com/webpack-contrib/node-loader
+            webpackのloaderにnode-loaderを追加する。<code
+              >yarn add node-loader</code
+            >をして、 webpack.config.js ファイルを作る。</v-list-item-content
+          >
+        </v-list-item>
+        <v-list-item
+          ><v-list-item-content>
+            <v-list-item-title>エラー３</v-list-item-title
+            ><code
+              >Uncaught Error: The module '~\zeromq\build\Release\zmq.node' was
+              compiled against a different Node.js version using
+              NODE_MODULE_VERSION 83. <br />This version of Node.js requires
+              NODE_MODULE_VERSION 80. <br />Please try re-compiling or
+              re-installing the module (for instance, using npm rebuild or npm
+              install).</code
+            >参考リンク
+            <a href="https://qiita.com/YKEI_mrn/items/c10ce127123bc47b9c5d"
+              >https://qiita.com/YKEI_mrn/items/c10ce127123bc47b9c5d</a
+            >
+            <a href="https://note.com/npaka/n/nd634e4c4beb7"
+              >https://note.com/npaka/n/nd634e4c4beb7</a
+            ></v-list-item-content
+          >
+        </v-list-item>
+      </v-list>
+      <h3>パスの編集について</h3>
+      <p>
+        スタートボタン→「設定」→「システム」→「詳細情報」→「システムの詳細設定」（ウィンドウが開く）→「環境変数」<br />→ユーザー環境変数もしくはシステム環境変数の"Path"を選択し、編集する。
+      </p>
+      <p>
+        <a href="https://www.atmarkit.co.jp/ait/articles/1805/11/news035.html"
+          >Windows 10でPath環境変数を設定／編集する</a
+        >
+      </p>
+      <p>
+        編集の際は既存のパスを誤って削除してしまわないよう注意。コマンドが使えなくなって困る。
+      </p>
+      <h3>改行コードについて</h3>
+      <p>OSによって用いられる改行コードが異なる。</p>
+      <p>
+        <a href="https://cprogram.net/line-feed-code/"
+          >改行コードの種類の「CR」「LF」「CRLF」の意味と違い</a
+        >
+      </p>
+      <p>
+        git add するときに<code>warning: LF will be replaced by CRLF ~</code>
+        などと表示されることがある。
+      </p>
+      <p>
+        <a href="https://normalblog.net/system/lf_replaced_crlf/"
+          >git add .したらwarning: LF will be replaced by CRLF
+          inが出まくったのは改行コードを自動変換していたから</a
+        >
+      </p>
+      <h3>ファイル名変更後のエラー</h3>
+      <p>
+        ファイル名を変更した後、しばらくVSCode上で<br /><code
+          >Already included file name (component) differs from file name
+          (component) only in casing.<br />
+          The file is in the program because:<br />
+          Imported via '~' from file '~'<br />
+          Root file specified for compilation</code
+        ><br />というようなエラー表示がなされることがある。キャッシュの問題のようで、しばらく放置していると解消した。
+      </p>
     </v-card-text>
     <v-card-actions>
       <v-spacer />
