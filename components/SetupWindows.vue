@@ -34,6 +34,9 @@
       </p>
       <h2>Typescriptについて</h2>
       <p>
+        Typescriptは、Javascriptに静的型付けの機能を付加した言語。変数の型をあらかじめ宣言しておくことで、思いがけないエラーを回避できる。
+      </p>
+      <p>
         <a href="https://qiita.com/nrslib/items/be90cc19fa3122266fd7"
           >vue.js + typescript = vue.ts ことはじめ</a
         >
@@ -316,7 +319,9 @@
       </p>
       <p>
         git add するときに<code>warning: LF will be replaced by CRLF ~</code>
-        などと表示されることがある。
+        などと表示されることがある。<br /><code
+          >git config --global core.autoCRLF false</code
+        >を実行すると解消される。
       </p>
       <p>
         <a href="https://normalblog.net/system/lf_replaced_crlf/"
@@ -332,7 +337,7 @@
           The file is in the program because:<br />
           Imported via '~' from file '~'<br />
           Root file specified for compilation</code
-        ><br />というようなエラー表示がなされることがある。キャッシュの問題のようで、しばらく放置していると解消した。
+        ><br />というようなエラー表示がなされることがある。<br />キャッシュの問題のようで、しばらく放置していると解消した。
       </p>
     </v-card-text>
     <v-card-actions>
