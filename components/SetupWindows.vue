@@ -146,6 +146,42 @@
       </p>
       <h2>Prettier + ESLint（フォーマッター）について</h2>
       <p>いずれもVSCodeの拡張機能からインストールできる。</p>
+      <v-list>
+        <v-subheader>有効化の手順</v-subheader>
+        <v-list-item>1.VSCodeの拡張機能からESLintをインストール。</v-list-item>
+        <v-list-item
+          >2.ローカルにESLintがインストールされていない（node_modulesにESLintが入っていない）場合は2.1~2.4を実行。</v-list-item
+        ><v-list-item
+          >2-1.カレントディレクトリで<code>yarn</code>を実行してpackage.jsonを生成。</v-list-item
+        >
+        <v-list-item
+          >2-2.<code>yarn add --dev eslint</code
+          >を実行してローカルにESLintをインストール。</v-list-item
+        >
+        <v-list-item
+          >2-3.package.jsonのscriptsの部分に<code>"lint": "eslint src"</code
+          >と加筆。</v-list-item
+        >
+        <v-list-item
+          >2-4.カレントディレクトリで<code
+            >"node_modules\.bin\eslint" --init</code
+          >を実行。</v-list-item
+        >
+        <v-list-item
+          >3.VSCodeの拡張機能からPrettierをインストール。</v-list-item
+        >
+        <v-list-item
+          >4.「ctrl +
+          ,」を押して設定画面を開き、設定の検索欄に「defaultformatter」と入力。Default
+          Formatterの欄で「Prettier - Code formatter」を選択。</v-list-item
+        >
+        <v-list-item
+          >5.設定の検索欄に「save」と入力。Format On
+          Saveの欄にチェックを入れる。</v-list-item
+        >
+        <v-list-item>6.一旦VSCodeを終了して開き直す。</v-list-item>
+      </v-list>
+      <p>詳細は以下のリンクを参照。</p>
       <p>
         <a href="https://qiita.com/Mount/items/5f8196b891444575b7db"
           >VS CodeにESLintを設定する
