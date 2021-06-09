@@ -203,6 +203,17 @@
           </v-list-item-content></v-list-item
         >
       </v-list>
+      <p>参考リンク</p>
+      <p>
+        <a href="https://qiita.com/Mount/items/5f8196b891444575b7db"
+          >VS CodeにESLintを設定する
+        </a>
+      </p>
+      <p>
+        <a href="https://qiita.com/k_kazukiiiiii/items/335338b3c63c28a0182c"
+          >VSCodeでファイル保存時にPrettierを走らせる方法
+        </a>
+      </p>
       <h3>ESLintのルール設定</h3>
       <p>
         ESLintによるコードチェックのルールは、.eslintrc.jsのrulesの内容を加筆修正することで変更できる。<br />例：<code
@@ -214,7 +225,7 @@
       </p>
       <h3>Prettierのルール設定</h3>
       <p>
-        Prettierによるコードチェックのルールは、.prettierrc.jsを加筆修正することで変更できる。<br />例：.prettierrc.jsの内容を
+        Prettierによる整形のルールは、.prettierrc.jsを加筆修正することで変更できる。<br />例：.prettierrc.jsの内容を
       </p>
       <pre><code
       >module.exports = {
@@ -240,17 +251,37 @@
         >を参照。
       </p>
       <h3>ESLintのみの場合とPrettierを併用する場合との比較</h3>
-      <p></p>
-      <p>参考リンク</p>
       <p>
-        <a href="https://qiita.com/Mount/items/5f8196b891444575b7db"
-          >VS CodeにESLintを設定する
-        </a>
+        ESLintにはコードチェック機能だけでなく整形機能もあるため、ESLintだけでチェックと整形を行うことも可能だが、何故あえてESLintでチェック、Prettierで整形、というように併用するのだろうか。
+      </p>
+      <v-list
+        ><v-subheader>併用のメリット</v-subheader>
+        <v-list-item
+          ><v-list-item-content>
+            <v-list-item-title
+              >1.ESLintでは整形できないコードを整形できる</v-list-item-title
+            >
+            一行の文字数が長いコードはESLintだと整形できない。Prettierならばそのような状況でも整形が可能。
+          </v-list-item-content></v-list-item
+        >
+        <v-list-item
+          ><v-list-item-content>
+            <v-list-item-title
+              >2.ESLint と比べて手軽で確実に整形できる</v-list-item-title
+            >
+            ESLintは設定に該当するエラーのみを整形するので、設定次第でコードを整形しきれない事がある。厳密に整形しようとすると設定が複雑になってしまう。一方Prettierにはデフォルトの整形ルールがあり、複雑な設定無しに手軽で確実に整形できる。
+          </v-list-item-content></v-list-item
+        >
+      </v-list>
+      <p>
+        ESLintの整形機能とPrettierの整形機能が競合しないようにするためには、eslint-config-prettierというパッケージをインストールして、ESLintのフォーマットのルールを無効化する。なお、上で述べたようにプロジェクト作成時にフォーマッターとしてESLint
+        +
+        Prettierを選択した場合は、競合しないような設定が自動的になされるので、気にする必要は無い。
       </p>
       <p>
-        <a href="https://qiita.com/k_kazukiiiiii/items/335338b3c63c28a0182c"
-          >VSCodeでファイル保存時にPrettierを走らせる方法
-        </a>
+        参考：<a href="https://qiita.com/soarflat/items/06377f3b96964964a65d"
+          >Prettier 入門 ～ESLintとの違いを理解して併用する～</a
+        >
       </p>
       <h2>Visual Studio Codeについて</h2>
       <h3>便利な拡張機能</h3>
