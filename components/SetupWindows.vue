@@ -74,15 +74,6 @@
           <v-list-item
             ><v-list-item-content>
               <v-list-item-title
-                >Choose a version of Vue.js that you want to start the project
-                with</v-list-item-title
-              >
-              <v-list-item-subtitle>2.x</v-list-item-subtitle>
-            </v-list-item-content></v-list-item
-          >
-          <v-list-item
-            ><v-list-item-content>
-              <v-list-item-title
                 >class-style component syntax?</v-list-item-title
               >
               <v-list-item-subtitle>Y</v-list-item-subtitle>
@@ -109,8 +100,14 @@
               >
               <v-list-item-subtitle>ESLint + Prettier</v-list-item-subtitle>
             </v-list-item-content></v-list-item
-          ></v-list
-        >
+          >
+          <v-list-item
+            ><v-list-item-content>
+              <v-list-item-title>additional lint features:</v-list-item-title>
+              <v-list-item-subtitle>Lint on save</v-list-item-subtitle>
+            </v-list-item-content></v-list-item
+          >
+        </v-list>
       </p>
       <h2>Electronについて</h2>
       <p>
@@ -148,43 +145,103 @@
         <code>vue add vuetify</code> でインストール。
       </p>
       <h2>Prettier + ESLint（フォーマッター）について</h2>
-      <p>いずれもVSCodeの拡張機能からインストールできる。</p>
+      <h3>導入手順</h3>
+      <p>
+        プロジェクト作成時には、前述の通り<v-list
+          ><v-list-item
+            ><v-list-item-content>
+              <v-list-item-title
+                >a linter / formatter config:</v-list-item-title
+              >
+              <v-list-item-subtitle>ESLint + Prettier</v-list-item-subtitle>
+            </v-list-item-content></v-list-item
+          >
+          <v-list-item
+            ><v-list-item-content>
+              <v-list-item-title>additional lint features:</v-list-item-title>
+              <v-list-item-subtitle>Lint on save</v-list-item-subtitle>
+            </v-list-item-content></v-list-item
+          ></v-list
+        >を選択しておく。
+      </p>
       <v-list>
         <v-subheader>有効化の手順</v-subheader>
-        <v-list-item>1.VSCodeの拡張機能からESLintをインストール。</v-list-item>
         <v-list-item
-          >2.ローカルにESLintがインストールされていない（node_modulesにESLintが入っていない）場合は2.1~2.4を実行。</v-list-item
-        ><v-list-item
-          >2-1.カレントディレクトリで<code>yarn</code>を実行してpackage.jsonを生成。</v-list-item
+          ><v-list-item-content>
+            <v-list-item-title>1.ESLintの拡張機能の追加</v-list-item-title>
+            VSCodeを起動し、左の「拡張機能」ボタンを押す。検索欄に「eslint」と入力すると「ESLint」が出てくるので、その右側にある「インストール」ボタンを押すとインストールできる。
+          </v-list-item-content></v-list-item
         >
         <v-list-item
-          >2-2.<code>yarn add --dev eslint</code
-          >を実行してローカルにESLintをインストール。</v-list-item
+          ><v-list-item-content>
+            <v-list-item-title>2.Prettierの拡張機能の追加</v-list-item-title>
+            上と同様に、検索欄に「prettier」と入力すると「Prettier - Code
+            formatter」が出てくるのでインストールする。
+          </v-list-item-content></v-list-item
         >
         <v-list-item
-          >2-3.package.jsonのscriptsの部分に<code>"lint": "eslint src"</code
-          >と加筆。</v-list-item
+          ><v-list-item-content>
+            <v-list-item-title>3.Default Formatterの設定</v-list-item-title>
+            「Ctrl」と「,」を押してVSCodeの設定画面を開く。検索欄に「defaultformatter」と入力すると「Editor:
+            Default Formatter」というものが表示されるので、「Prettier - Code
+            formatter」を選択する。
+          </v-list-item-content></v-list-item
         >
         <v-list-item
-          >2-4.カレントディレクトリで<code
-            >"node_modules\.bin\eslint" --init</code
-          >を実行。</v-list-item
+          ><v-list-item-content>
+            <v-list-item-title
+              >4.ファイルの変更保存時に自動で整形する設定</v-list-item-title
+            >
+            上と同様に、設定画面の検索欄に「save」と入力すると、「Editor: Format
+            On Save」というものが表示されるので、そこにチェックを付ける。
+          </v-list-item-content></v-list-item
         >
         <v-list-item
-          >3.VSCodeの拡張機能からPrettierをインストール。</v-list-item
+          ><v-list-item-content>
+            <v-list-item-title>5.ここまでの変更の反映</v-list-item-title>
+            一旦VSCodeを終了し、開き直す。画面右下に「Formatting:✓」と表示されていることを確認する（もし「Formatting:×」になっていたらクリックして✓にする）。ファイルに変更を加えて保存してみて、コードが自動で整形されていることを確認する。
+          </v-list-item-content></v-list-item
         >
-        <v-list-item
-          >4.「ctrl +
-          ,」を押して設定画面を開き、設定の検索欄に「defaultformatter」と入力。Default
-          Formatterの欄で「Prettier - Code formatter」を選択。</v-list-item
-        >
-        <v-list-item
-          >5.設定の検索欄に「save」と入力。Format On
-          Saveの欄にチェックを入れる。</v-list-item
-        >
-        <v-list-item>6.一旦VSCodeを終了して開き直す。</v-list-item>
       </v-list>
-      <p>詳細は以下のリンクを参照。</p>
+      <h3>ESLintのルール設定</h3>
+      <p>
+        ESLintによるコードチェックのルールは、.eslintrc.jsのrulesの内容を加筆修正することで変更できる。<br />例：<code
+          >semi: [2, "always"]</code
+        >を書き加えると、文末にセミコロンがないときにエラーを出すようにできる。<br />その他のルールについては<a
+          href="https://eslint.org/docs/rules/"
+          >https://eslint.org/docs/rules/</a
+        >を参照。
+      </p>
+      <h3>Prettierのルール設定</h3>
+      <p>
+        Prettierによるコードチェックのルールは、.prettierrc.jsを加筆修正することで変更できる。<br />例：.prettierrc.jsの内容を
+      </p>
+      <pre><code
+      >module.exports = {
+    trailingComma: 'es5',
+    tabWidth: 2,
+    semi: false,
+    singleQuote: true,
+  };</code></pre>
+      <p>
+        とした場合は、<v-list
+          ><v-list-item
+            >ECMAScript5のオブジェクトや配列などには必ず末尾カンマが付く</v-list-item
+          >
+          <v-list-item>Tabキー一つがスペースキー二つ分に相当する</v-list-item>
+          <v-list-item
+            >セミコロンを付けないと問題が生じる場合のみセミコロンを付け加える</v-list-item
+          ><v-list-item
+            >文字列はシングルクオーテーションで囲む</v-list-item
+          ></v-list
+        >というルールが設定されることになる。<br />その他のルールについては<a
+          href="https://prettier.io/docs/en/options.html"
+          >https://prettier.io/docs/en/options.html</a
+        >を参照。
+      </p>
+      <h3>ESLintのみの場合とPrettierを併用する場合との比較</h3>
+      <p></p>
+      <p>参考リンク</p>
       <p>
         <a href="https://qiita.com/Mount/items/5f8196b891444575b7db"
           >VS CodeにESLintを設定する
