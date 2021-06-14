@@ -147,7 +147,7 @@
       <h2>Prettier + ESLint（フォーマッター）について</h2>
       <h3>導入手順</h3>
       <p>
-        プロジェクト作成時には、前述の通り<v-list
+        Vueプロジェクト作成時には、前述の通り<v-list
           ><v-list-item
             ><v-list-item-content>
               <v-list-item-title
@@ -227,15 +227,9 @@
       <p>
         Prettierによる整形のルールは、.prettierrc.jsを加筆修正することで変更できる。<br />例：.prettierrc.jsの内容を
       </p>
-      <pre><code
-      >module.exports = {
-    trailingComma: 'es5',
-    tabWidth: 2,
-    semi: false,
-    singleQuote: true,
-  };</code></pre>
+      <v-img :src="settings" contain />
       <p>
-        とした場合は、<v-list
+        上のようにした場合は、<v-list
           ><v-list-item
             >ECMAScript5のオブジェクトや配列などには必ず末尾カンマが付く</v-list-item
           >
@@ -273,10 +267,21 @@
           </v-list-item-content></v-list-item
         >
       </v-list>
+      <h3>ESLintとPrettierの競合回避</h3>
       <p>
-        ESLintの整形機能とPrettierの整形機能が競合しないようにするためには、eslint-config-prettierというパッケージをインストールして、ESLintのフォーマットのルールを無効化する。なお、上で述べたようにプロジェクト作成時にフォーマッターとしてESLint
-        +
-        Prettierを選択した場合は、競合しないような設定が自動的になされるので、気にする必要は無い。
+        ESLintのチェック機能とPrettierの整形機能が競合しないようにするためには、ESLintの機能を制限するパッケージを利用する。
+      </p>
+      <p>
+        例：.prettierrc.jsに<code>singleQuote: true</code
+        >のルールを追加すると、Prettierの整形機能によって文字列がシングルクオーテーションで囲まれるようになるが、ESLintのチェック機能（文字列をダブルクオーテーションで囲む）によって、「シングルクオーテーションではなくダブルクオーテーションを使用せよ」という旨のエラーが表示されてしまう。
+      </p>
+      <v-img :src="warnings" contain />
+      <p>
+        解決法：.eslintrc.jsのextendsの部分に<code>'@vue/eslint-config-typescript',</code>を追加する。このパッケージはPrettierが整形した箇所に対してESLintがエラーを出さないようにするもので、Vueプロジェクト作成時に自動でインストールされているはず（package.jsonを参照）。
+      </p>
+      <v-img :src="extension" max-height="300px" contain />
+      <p>
+        一旦VSCodeを閉じて開き直すと、変更が反映され、表示されていたエラーが消える。
       </p>
       <p>
         参考：<a href="https://qiita.com/soarflat/items/06377f3b96964964a65d"
@@ -434,6 +439,18 @@
     </v-card-actions>
   </v-card>
 </template>
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  data() {
+    return {
+      settings: require('~/assets/img/windows-manual-pictures/settings.png'),
+      warnings: require('~/assets/img/windows-manual-pictures/warnings.png'),
+      extension: require('~/assets/img/windows-manual-pictures/extension.png'),
+    }
+  },
+})
+</script>
 <style scoped>
 h2 {
   margin: 2rem auto 1rem;
