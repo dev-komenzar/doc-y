@@ -342,6 +342,13 @@
           </v-list-item-content></v-list-item
         >
       </v-list>
+      <h2>Figmaについて</h2>
+      <p>公式：<a href="https://www.figma.com/">https://www.figma.com/</a></p>
+      <p>
+        入門：<a href="https://note.com/fjkn/m/m9829c621e025"
+          >https://note.com/fjkn/m/m9829c621e025</a
+        >
+      </p>
       <h2>（おまけ）個人的につまづいた部分について</h2>
       <p>過去に遭遇した（主に）Windows特有の問題について述べておく。</p>
       <h3>ZeroMQでコンパイルエラー</h3>
