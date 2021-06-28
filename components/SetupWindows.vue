@@ -1,7 +1,39 @@
 <template>
   <v-card>
     <v-card-text>
-      <h2>Vue CLIについて</h2>
+      <h2>目次</h2>
+      <v-list
+        ><v-list-item
+          ><nuxt-link to="#vue-cli">Vue CLIについて</nuxt-link></v-list-item
+        ><v-list-item
+          ><nuxt-link to="#typescript"
+            >TypeScriptについて</nuxt-link
+          ></v-list-item
+        ><v-list-item
+          ><nuxt-link to="#vue+ts"
+            >Vue + TypeScriptで開発を始める</nuxt-link
+          ></v-list-item
+        ><v-list-item
+          ><nuxt-link to="#electron">Electronについて</nuxt-link></v-list-item
+        ><v-list-item
+          ><nuxt-link to="#vuetify">Vuetifyについて</nuxt-link></v-list-item
+        ><v-list-item
+          ><nuxt-link to="#formatter"
+            >Prettier + ESLint（フォーマッター）について</nuxt-link
+          ></v-list-item
+        ><v-list-item
+          ><nuxt-link to="#vscode"
+            >Visual Studio Codeについて</nuxt-link
+          ></v-list-item
+        ><v-list-item
+          ><nuxt-link to="#figma">Figmaについて</nuxt-link></v-list-item
+        ><v-list-item
+          ><nuxt-link to="#addition"
+            >（おまけ）個人的につまづいた部分について</nuxt-link
+          ></v-list-item
+        ></v-list
+      >
+      <h2 id="vue-cli">Vue CLIについて</h2>
       <p>
         <a href="https://jp.vuejs.org/v2/guide/installation.html"
           >Vue.js公式ドキュメント(version2)</a
@@ -32,10 +64,7 @@
           >npmとyarnのコマンド早見表</a
         >
       </p>
-      <h2>Typescriptについて</h2>
-      <p>
-        Typescriptは、Javascriptに静的型付けの機能を付加した言語。変数の型をあらかじめ宣言しておくことで、思いがけないエラーを回避できる。
-      </p>
+      <h2 id="typescript">TypeScriptについて</h2>
       <p>
         <a href="https://qiita.com/nrslib/items/be90cc19fa3122266fd7"
           >vue.js + typescript = vue.ts ことはじめ</a
@@ -46,7 +75,7 @@
           >Vue.js to TypeScriptの書き方一覧</a
         >
       </p>
-      <h2>Vue + TypeScriptで開発を始める</h2>
+      <h2 id="vue+ts">Vue + TypeScriptで開発を始める</h2>
       <p>
         新しいプロジェクトを作成したいディレクトリに移動し、
         <code>vue create (プロジェクト名) </code
@@ -109,7 +138,7 @@
           >
         </v-list>
       </p>
-      <h2>Electronについて</h2>
+      <h2 id="electron">Electronについて</h2>
       <p>
         <a href="https://www.electronjs.org/docs">Electron公式ドキュメント</a>
       </p>
@@ -130,7 +159,7 @@
         Vueプロジェクトを立ち上げてから
         <code>yarn add electron</code> でインストール。
       </p>
-      <h2>Vuetifyについて</h2>
+      <h2 id="vuetify">Vuetifyについて</h2>
       <p>
         <a href="https://vuetifyjs.com/ja/getting-started/installation/"
           >Vuetify公式ドキュメント</a
@@ -144,7 +173,7 @@
         Vueプロジェクトを立ち上げてから
         <code>vue add vuetify</code> でインストール。
       </p>
-      <h2>Prettier + ESLint（フォーマッター）について</h2>
+      <h2 id="formatter">Prettier + ESLint（フォーマッター）について</h2>
       <h3>導入手順</h3>
       <p>
         Vueプロジェクト作成時には、前述の通り<v-list
@@ -288,7 +317,7 @@
           >Prettier 入門 ～ESLintとの違いを理解して併用する～</a
         >
       </p>
-      <h2>Visual Studio Codeについて</h2>
+      <h2 id="vscode">Visual Studio Codeについて</h2>
       <h3>便利な拡張機能</h3>
       <v-list two-line>
         <v-list-item
@@ -342,14 +371,14 @@
           </v-list-item-content></v-list-item
         >
       </v-list>
-      <h2>Figmaについて</h2>
+      <h2 id="figma">Figmaについて</h2>
       <p>公式：<a href="https://www.figma.com/">https://www.figma.com/</a></p>
       <p>
         入門：<a href="https://note.com/fjkn/m/m9829c621e025"
           >https://note.com/fjkn/m/m9829c621e025</a
         >
       </p>
-      <h2>（おまけ）個人的につまづいた部分について</h2>
+      <h2 id="addition">（おまけ）個人的につまづいた部分について</h2>
       <p>過去に遭遇した（主に）Windows特有の問題について述べておく。</p>
       <h3>ZeroMQでコンパイルエラー</h3>
       <v-list three-line>
